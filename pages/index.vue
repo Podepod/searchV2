@@ -3,7 +3,7 @@
     <h1 id="title" class="title">._.</h1>
 
     <div class="searchbars center">
-      <Searchbar v-for="i in searchbars" v-bind:key="i.name" :description="i.description" :action="i.action" :method="i.method" :queryname="i.queryname" :placeholder="i.placeholder" :isDefault="i.isDefault" :log="i.log" />
+      <Searchbar v-for="i in searchbars" v-bind:key="i.name" :description="i.description" :action="i.action" :method="i.method" :queryname="i.queryname" :placeholder="i.placeholder" :isDefault="i.isDefault" :log="i.log" :smartSearch="i.smartSearch" />
     </div>
 
     <div class="shortcuts center">
@@ -30,8 +30,8 @@ export default {
     return {
       // [TODO] get data from file of database --> pak misschien maar gwn file voor dit
       searchbars: [
-        {name: 'Google', description: 'Overlord', action: 'https://www.google.com/search', method: 'GET', queryname: 'q', placeholder: 'Search', isDefault: true, log: true},
-        {name: 'Stack Overflow', description: 'Code problems', action: 'https://www.stackoverflow.com/search', method: 'GET', queryname: 'q', placeholder: 'Search 🥞', isDefault: false, log: true}
+        {name: 'Smart search', description: 'Useful stuff for me', action: 'https://www.google.com/search', method: 'GET', queryname: 'q', placeholder: 'Smart Search', isDefault: true, log: true, smartSearch: true},
+        {name: 'Stupid search', description: 'Less useful stuff for me', action: 'https://www.google.com/search', method: 'GET', queryname: 'q', placeholder: 'Stupid Search', isDefault: false, log: true, smartSearch: false},
       ],
       shortcuts: [
         {name: 'Facebook', description: 'Feestboek', url: 'https://facebook.com', type: 'external', icon: 'facebookIco', log: true},
