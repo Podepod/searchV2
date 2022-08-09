@@ -1,12 +1,13 @@
-FROM node:lts-alpine3.11
+FROM node:16
 
-# test
+# Create app directory (mount volume to this directory in docker compose)
 WORKDIR /app
 
-RUN apk update && \
-    apk add git && \
-    npm install -g npm && \
-    npm install -g vue-cli && \
-    npm install -g create-nuxt-app@2.15.0
+ADD package.json ./
 
-EXPOSE 3000
+RUN npm install
+
+COPY . .
+
+# Start de node server
+CMD [ "npm", "run", "dev" ]
