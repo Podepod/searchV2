@@ -25,8 +25,8 @@
         methods: {
             handleSearch() { 
                 // [TODO] als search query == link of shortcut naam --> ga naar link of shortcut url in plaats van search query uit te voeren
-                if (this.smartSearch && /^(https?:\/\/)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6})$/gm.test(this.form.search)){
-                    window.location.href = /^https.:\/\//gm.test(this.form.search) ? this.form.search : `http://${this.form.search}`;                 
+                if (this.smartSearch){
+                    this.smartSearch();               
                 } else if (this.method.toLowerCase() == "get") {
                     // [TODO] log
                     window.location.href = `${this.action}?${this.queryname}=${this.form.search}`;
@@ -39,6 +39,12 @@
 
                 // window.location.href = 
                 this.form.search = ""
+            },
+
+            smartSearch() {
+                if (/^(https?:\/\/)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6})$/gm.test(this.form.search)) {
+                    window.location.href = /^https.:\/\//gm.test(this.form.search) ? this.form.search : `http://${this.form.search}`;
+                }
             },
 
             focusSearchBar() {

@@ -42,6 +42,10 @@ export default {
         {name: 'Netflix', description: 'Series', url: 'https://netflix.com', type: 'external', icon: 'netflixIco', log: true},
         {name: 'Disney Plus', description: 'Series', url: 'https://disneyplus.com', type: 'external', icon: 'disneyplusIco', log: true},
         {name: 'GitHub', description: 'Dev', url: 'https://github.com', type: 'external', icon: 'githubIco', log: true}
+      ],
+      searchengines: [
+        {name: 'Google', description: 'Overlord', method: 'GET', queryname: 'q', link:'https://www.google.com/search', keywords: ['google']},
+        {name: 'Wikipedia', description: 'Knowledge', method: 'GET', queryname: 'search', link: 'https://nl.wikipedia.org/wiki/Special:Search', keywords: ['wikipedia', 'wiki']}
       ]
     }
   }
