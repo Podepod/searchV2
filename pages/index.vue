@@ -3,7 +3,7 @@
     <h1 id="title" class="title">._.</h1>
 
     <div class="searchbars center">
-      <Searchbar v-for="i in searchbars" v-bind:key="i.name" :description="i.description" :action="i.action" :method="i.method" :queryname="i.queryname" :placeholder="i.placeholder" :isDefault="i.isDefault" :log="i.log" :smartSearch="i.smartSearch" />
+      <Searchbar v-for="i in searchbars" v-bind:key="i.name" :description="i.description" :searchEngine="defaultSearchEngine" :placeholder="i.placeholder" :isDefault="i.isDefault" :log="i.log" :smartSearch="i.smartSearch" :searchEngines="searchengines" />
     </div>
 
     <div class="shortcuts center">
@@ -30,23 +30,24 @@ export default {
     return {
       // [TODO] get data from file of database --> pak misschien maar gwn file voor dit
       searchbars: [
-        {name: 'Smart search', description: 'Useful stuff for me', action: 'https://www.google.com/search', method: 'GET', queryname: 'q', placeholder: 'Smart Search', isDefault: true, log: true, smartSearch: true},
-        {name: 'Stupid search', description: 'Less useful stuff for me', action: 'https://www.google.com/search', method: 'GET', queryname: 'q', placeholder: 'Stupid Search', isDefault: false, log: true, smartSearch: false},
+        {name: 'Smart search', description: 'Useful stuff for me', placeholder: 'Smart Search', isDefault: true, log: true, smartSearch: true},
+        {name: 'Stupid search', description: 'Less useful stuff for me', placeholder: 'Stupid Search', isDefault: false, log: true, smartSearch: false},
       ],
       shortcuts: [
-        {name: 'Facebook', description: 'Feestboek', url: 'https://facebook.com', type: 'external', icon: 'facebookIco', log: true},
-        {name: 'Messenger', description: 'Chatding', url: 'https://messenger.com', type: 'external', icon: 'messengerIco', log: true},
-        {name: 'YouTube', description: 'Filmpjes', url: 'https://youtube.com', type: 'external', icon: 'youtubeIco', log: true},
-        {name: 'Drive', description: 'Cloud files', url: 'https://drive.google.com', type: 'external', icon: 'driveIco', log: true},
-        {name: 'Mail', description: 'Cloud brieven', url: 'https://mail.google.com', type: 'external', icon: 'mailIco', log: true},
-        {name: 'Netflix', description: 'Series', url: 'https://netflix.com', type: 'external', icon: 'netflixIco', log: true},
-        {name: 'Disney Plus', description: 'Series', url: 'https://disneyplus.com', type: 'external', icon: 'disneyplusIco', log: true},
-        {name: 'GitHub', description: 'Dev', url: 'https://github.com', type: 'external', icon: 'githubIco', log: true}
+        {name: 'Facebook', description: 'Feestboek', url: 'https://facebook.com', type: 'external', icon: 'Facebook', log: true},
+        {name: 'Messenger', description: 'Chatding', url: 'https://messenger.com', type: 'external', icon: 'Messenger', log: true},
+        {name: 'YouTube', description: 'Filmpjes', url: 'https://youtube.com', type: 'external', icon: 'Youtube', log: true},
+        {name: 'Drive', description: 'Cloud files', url: 'https://drive.google.com', type: 'external', icon: 'Drive', log: true},
+        {name: 'Mail', description: 'Cloud brieven', url: 'https://mail.google.com', type: 'external', icon: 'Mail', log: true},
+        {name: 'Netflix', description: 'Series', url: 'https://netflix.com', type: 'external', icon: 'Netflix', log: true},
+        {name: 'Disney+', description: 'Series', url: 'https://disneyplus.com', type: 'external', icon: 'Disney_Plus', log: true},
+        {name: 'GitHub', description: 'Dev', url: 'https://github.com', type: 'external', icon: 'Github', log: true}
       ],
       searchengines: [
         {name: 'Google', description: 'Overlord', method: 'GET', queryname: 'q', link:'https://www.google.com/search', keywords: ['google']},
         {name: 'Wikipedia', description: 'Knowledge', method: 'GET', queryname: 'search', link: 'https://nl.wikipedia.org/wiki/Special:Search', keywords: ['wikipedia', 'wiki']}
-      ]
+      ],
+      defaultSearchEngine: 0
     }
   }
 }
