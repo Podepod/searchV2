@@ -33,12 +33,16 @@ form {
     @media only screen and (max-width: 667px){
         width: 98%;
     }
+
+    form {
+        flex-direction: row;
+    }
 }
 
 .searchbar {
     margin-bottom: 1em;
     padding: 0 0.5em;
-    display: block;
+    display: inline-block;
     width: 100%;
     height: auto;
     font-size: 250%;
@@ -70,6 +74,49 @@ form {
 
     &:focus::-ms-input-placeholder {
         color: rgb(200, 200, 200);
+    }
+
+    &.otherEngine {
+        border-radius: 0em 10000em 10000em 0em;
+        width: 90%;
+        margin-left: 0;
+
+        @media only screen and (max-width: 667px){
+            width: 85%;
+        }
+    }
+}
+
+.searchEngine {
+    margin-bottom: 1em;
+    padding: 0 0.5em;
+    display: inline-block;
+    width: 10%;
+    height: auto;
+    font-size: 250%;
+    background-color: inherit;
+    border: rgb(227, 227, 227) solid 2px;
+    border-right: none;
+    caret-color: rgb(227, 227, 227);
+    border-radius: 10000em 0em 0em 10000em;
+
+    margin-right: 0;
+
+    &:hover {
+        cursor: pointer;
+        border-color: rgb(200, 200, 200);
+    }
+
+    img {
+        height: 1em;
+        width: auto;
+        vertical-align: middle;
+    }
+
+    @media only screen and (max-width: 667px){
+        font-size: 150%;
+        padding: 0.5em 0.5em;
+        width: 15%;
     }
 }
 

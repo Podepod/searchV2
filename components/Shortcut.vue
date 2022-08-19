@@ -1,7 +1,7 @@
 <template>
     <button class="shortcut" @click="clicked()" @mouseover="hover = true" @mouseleave="hover = false">
         <p>{{name}}</p>
-        <img :src="hover ? `/images/shortcuts_svg/${icon}_Hover.svg` : `/images/shortcuts_svg/${icon}_Default.svg`" alt="">
+        <img :src="hover ? `/images/shortcuts_svg/${icon}_Hover.svg` : `/images/shortcuts_svg/${icon}_Default.svg`" alt="" />
     </button>
 </template>
 

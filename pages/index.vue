@@ -44,8 +44,12 @@ export default {
         {name: 'GitHub', description: 'Dev', url: 'https://github.com', type: 'external', icon: 'Github', log: true}
       ],
       searchengines: [
-        {name: 'Google', description: 'Overlord', method: 'GET', queryname: 'q', link:'https://www.google.com/search', keywords: ['google']},
-        {name: 'Wikipedia', description: 'Knowledge', method: 'GET', queryname: 'search', link: 'https://nl.wikipedia.org/wiki/Special:Search', keywords: ['wikipedia', 'wiki']}
+        {name: 'Google', description: 'Overlord', method: 'GET', queryname: 'q', link:'https://www.google.com/search', icon: 'Google', keywords: ['google']},
+        {name: 'Wikipedia', description: 'Knowledge', method: 'GET', queryname: 'search', link: 'https://nl.wikipedia.org/wiki/Special:Search', icon: 'Wikipedia', keywords: ['wikipedia', 'wiki']},
+        // [TODO] maps
+        // stack overflow
+        // [TODO] images
+        {name: 'Bol.com', description: 'Packetjes!!!', method: 'GET', queryname: 'searchtext', link: 'https://www.bol.com/nl/nl/s/', icon: 'Bol', keywords: ['bol.com', 'bol']}
       ],
       defaultSearchEngine: 0
     }
