@@ -44,12 +44,12 @@ export default {
         {name: 'GitHub', description: 'Dev', url: 'https://github.com', type: 'external', icon: 'Github', log: true}
       ],
       searchengines: [
-        {name: 'Google', description: 'Overlord', method: 'GET', queryname: 'q', link:'https://www.google.com/search', icon: 'Google', keywords: ['google']},
-        {name: 'Wikipedia', description: 'Knowledge', method: 'GET', queryname: 'search', link: 'https://nl.wikipedia.org/wiki/Special:Search', icon: 'Wikipedia', keywords: ['wikipedia', 'wiki']},
-        // [TODO] maps
-        // stack overflow
-        // [TODO] images
-        {name: 'Bol.com', description: 'Packetjes!!!', method: 'GET', queryname: 'searchtext', link: 'https://www.bol.com/nl/nl/s/', icon: 'Bol', keywords: ['bol.com', 'bol']}
+        {name: 'Google', description: 'Overlord', method: 'GET', link: 'https://www.google.com/search?q={searchquery}', icon: 'Google', log: true, keywords: ['google']},
+        {name: 'Wikipedia', description: 'Knowledge', method: 'GET', link: 'https://nl.wikipedia.org/wiki/Special:Search?search={searchquery}', icon: 'Wikipedia', log: true, keywords: ['wikipedia', 'wiki']},
+        {name: 'Maps', description: 'Directions', method: 'GET', link: 'https://www.google.be/maps/?q={searchquery}', icon: 'Maps', log: true, keywords: ['maps']},
+        {name: 'Stack Overflow', description: 'Coding library', method: 'GET', link: 'https://stackoverflow.com/search?q={searchquery}', icon: 'Stack_Overflow', log: true, keywords: ['stack overflow', 'so']},
+        {name: 'Images', description: 'Images', method: 'GET', link: 'https://www.google.com/search?q={searchquery}&tbm=isch', icon: 'Images', log: true, keywords: ['images', 'img']},
+        {name: 'Bol.com', description: 'Packetjes!!!', method: 'GET', link: 'https://www.bol.com/nl/nl/s/?searchtext={searchquery}', icon: 'Bol', log: true, keywords: ['bol.com', 'bol']}
       ],
       defaultSearchEngine: 0
     }

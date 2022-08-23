@@ -10,4 +10,4 @@ RUN npm install
 COPY . .
 
 # Start de node server
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "start" ]

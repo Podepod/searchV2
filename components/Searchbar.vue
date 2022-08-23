@@ -26,38 +26,38 @@
         },
         methods: {
             handleSearch() { 
+                if (this.form.search == '') { return; }
+
                 // [TODO] als search query == link of shortcut naam --> ga naar link of shortcut url in plaats van search query uit te voeren
                 if (this.smartSearch){
                     this.handleSmartSearch();               
                 } else if (this.searchEngines[this.usedSearchEngine].method.toLowerCase() == "get") {
                     // [TODO] log
-                    if (this.form.search != '') {
-                        window.location.href = `${this.searchEngines[this.usedSearchEngine].link}?${this.searchEngines[this.usedSearchEngine].queryname}=${this.form.search}`;
-                    }
+                    this.doRedirect();
                 } else {
-                    // [TODO] zoek dees nog uit
+                    // [TODO] zoek dees nog uit --> isda echt nodig?
                     console.log("post");
                 }
 
-
-
-                // window.location.href = 
-                this.form.search = ""
+                this.form.search = "";
             },
 
             handleSmartSearch() {
-                if (/^(https?:\/\/)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6})$/gm.test(this.form.search)) {
-                    window.location.href = /^https.:\/\//gm.test(this.form.search) ? this.form.search : `http://${this.form.search}`;
+                if (/^(https?:\/\/)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6})\S*$/gm.test(this.form.search)) {
+                    this.doRedirect(/^https?:\/\//gm.test(this.form.search) ? this.form.search : `http://${this.form.search}`);
                 } else if (this.searchEngines[this.usedSearchEngine].method.toLowerCase() == "get") {
                     // [TODO] log
-                    if (this.form.search != '') {
-                        window.location.href = `${this.searchEngines[this.usedSearchEngine].link}?${this.searchEngines[this.usedSearchEngine].queryname}=${this.form.search}`;
-                    }
+                    this.doRedirect();
                 } else {
                     // [TODO] zoek dees nog uit
                     console.log("post");
                 }
                 return;
+            },
+
+            doRedirect(url) {
+                if (!url) { url = this.searchEngines[this.usedSearchEngine].link.replace(/(.+)(\{searchquery\})(.*)/gmi, `$1${this.form.search}$3`) }
+                window.location.href = url;
             },
 
             focusSearchBar() {
@@ -75,7 +75,7 @@
             },
 
             handleInput() {
-                if (this.smartSearch) {
+                if (this.smartSearch && /^@/gm.test(this.form.search)) {
                     for (var i = 0; i < this.searchEngines.length; i++) {
                         for (var j = 0; j < this.searchEngines[i].keywords.length; j++) {
                             const re = new RegExp(`^@(${this.searchEngines[i].keywords[j]}) `, 'gmi');
