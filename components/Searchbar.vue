@@ -1,9 +1,12 @@
 <template>
     <form @submit.prevent="handleSearch()" class="center" :action="this.searchEngines[this.searchEngine].action" :method="this.searchEngines[this.searchEngine].method">
-        <button v-if="this.usingNonDefaultEngine" class="searchEngine" @click="buttonResetSearchEngine()">
+        <button v-if="this.usingNonDefaultEngine" class="searchbarPrefix" @click="buttonResetSearchEngine()">
             <img :src="`/images/search_engines_svg/${this.searchEngines[usedSearchEngine].icon}_Default.svg`" alt="" />
         </button>
-        <input v-model="form.search" ref="search" @focus="handleFocus()" @blur="handleBlur()" @input="handleInput()" @keydown.delete="keyboardResetSearchEngine($event)" :class="this.usingNonDefaultEngine ? 'searchbar otherEngine' : 'searchbar'" type="search" :name="this.searchEngines[this.usedSearchEngine].queryname" :placeholder="tempPlaceholder" autocomplete="off">
+        <button v-if="this.searching_shortcut" class="searchbarPrefix" @click="buttonResetSearchShortcut()">
+            <img src="/images/other_icons_svg/shortcut_default.svg" alt="" />
+        </button>
+        <input v-model="form.search" ref="search" @focus="handleFocus()" @blur="handleBlur()" @input="handleInput()" @keydown.delete="keyboardResetSearchEngine($event)" :class="(this.usingNonDefaultEngine || this.searching_shortcut) ? 'searchbar withPrefix' : 'searchbar'" type="search" :name="this.searchEngines[this.usedSearchEngine].queryname" :placeholder="tempPlaceholder" autocomplete="off">
     </form>
 </template>
 
@@ -58,6 +61,7 @@
                             }
                         }
                     }
+                    this.resetShortcutSearch();
                 } else if (this.searchEngines[this.usedSearchEngine].method.toLowerCase() == "get") {
                     // [TODO] log
                     this.doRedirect();
@@ -100,6 +104,10 @@
                             }
                         }
                     }
+                } else if (this.smartSearch && /^#/gm.test(this.form.search)) {
+                    this.searching_shortcut = true;
+                } else if (this.smartSearch && !/^#/gm.test(this.form.search)) {
+                    this.searching_shortcut = false;
                 }
             },
 
@@ -119,6 +127,17 @@
                 if (this.smartSearch && this.usingNonDefaultEngine && this.form.search == '' && e.key=='Delete') {
                     this.resetSearchEngine();
                 }
+            },
+
+            resetShortcutSearch() {
+                this.form.search = "";
+                this.searching_shortcut = false;
+            },
+
+            buttonResetSearchShortcut() {
+                if (this.smartSearch && !this.searchbarFocussed) {
+                    this.resetSearchEngine()
+                } 
             }
         },
         data() {
@@ -126,6 +145,7 @@
                 hover_searchEngine: false,
                 usedSearchEngine: this.searchEngine,
                 usingNonDefaultEngine: false,
+                searching_shortcut: false,
                 form: {
                     search: ""
                 },

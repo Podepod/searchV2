@@ -76,7 +76,7 @@ form {
         color: rgb(200, 200, 200);
     }
 
-    &.otherEngine {
+    &.withPrefix {
         border-radius: 0em 10000em 10000em 0em;
         width: 90%;
         margin-left: 0;
@@ -87,7 +87,7 @@ form {
     }
 }
 
-.searchEngine {
+.searchbarPrefix {
     margin-bottom: 1em;
     padding: 0 0.5em;
     display: inline-block;
