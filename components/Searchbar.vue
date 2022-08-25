@@ -18,6 +18,7 @@
             'log',
             'smartSearch',
             'searchEngines',
+            'shortcuts'
         ],
         mounted() {
             if (this.isDefault) {
@@ -45,6 +46,18 @@
             handleSmartSearch() {
                 if (/^(https?:\/\/)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6})\S*$/gm.test(this.form.search)) {
                     this.doRedirect(/^https?:\/\//gm.test(this.form.search) ? this.form.search : `http://${this.form.search}`);
+                } else if (this.smartSearch && /^#/gm.test(this.form.search)) {
+                    for (var i = 0; i < this.shortcuts.length; i++) {
+                        if (this.shortcuts[i].keywords) {
+                            for (var j = 0; j < this.shortcuts[i].keywords.length; j++) {
+                                const re = new RegExp(`^#(${this.shortcuts[i].keywords[j]})$`, 'gmi');
+
+                                if (re.test(this.form.search)){
+                                    this.doRedirect(this.shortcuts[i].url);
+                                }
+                            }
+                        }
+                    }
                 } else if (this.searchEngines[this.usedSearchEngine].method.toLowerCase() == "get") {
                     // [TODO] log
                     this.doRedirect();

@@ -3,11 +3,11 @@
     <h1 id="title" class="title">._.</h1>
 
     <div class="searchbars center">
-      <Searchbar v-for="i in searchbars" v-bind:key="i.name" :description="i.description" :searchEngine="defaultSearchEngine" :placeholder="i.placeholder" :isDefault="i.isDefault" :log="i.log" :smartSearch="i.smartSearch" :searchEngines="searchengines" />
+      <Searchbar v-for="i in searchbars" v-bind:key="i.name" :description="i.description" :searchEngine="defaultSearchEngine" :placeholder="i.placeholder" :isDefault="i.isDefault" :log="i.log" :smartSearch="i.smartSearch" :searchEngines="searchengines" :shortcuts="shortcuts" />
     </div>
 
     <div class="shortcuts center">
-      <Shortcut v-for="i in shortcuts" v-bind:key="i.name" :name="i.name" :description="i.description" :url="i.url" :type="i.type" :icon="i.icon" :log="i.log" />
+      <Shortcut v-for="i in shortcuts" v-bind:key="i.name" v-if="!i.hidden" :name="i.name" :description="i.description" :url="i.url" :type="i.type" :icon="i.icon" :log="i.log" />
     </div>
 
   </div>
@@ -34,14 +34,15 @@ export default {
         {name: 'Stupid search', description: 'Less useful stuff for me', placeholder: 'Stupid Search', isDefault: false, log: true, smartSearch: false},
       ],
       shortcuts: [
-        {name: 'Facebook', description: 'Feestboek', url: 'https://facebook.com', type: 'external', icon: 'Facebook', log: true},
-        {name: 'Messenger', description: 'Chatding', url: 'https://messenger.com', type: 'external', icon: 'Messenger', log: true},
-        {name: 'YouTube', description: 'Filmpjes', url: 'https://youtube.com', type: 'external', icon: 'Youtube', log: true},
-        {name: 'Drive', description: 'Cloud files', url: 'https://drive.google.com', type: 'external', icon: 'Drive', log: true},
-        {name: 'Mail', description: 'Cloud brieven', url: 'https://mail.google.com', type: 'external', icon: 'Mail', log: true},
-        {name: 'Netflix', description: 'Series', url: 'https://netflix.com', type: 'external', icon: 'Netflix', log: true},
-        {name: 'Disney+', description: 'Series', url: 'https://disneyplus.com', type: 'external', icon: 'Disney_Plus', log: true},
-        {name: 'GitHub', description: 'Dev', url: 'https://github.com', type: 'external', icon: 'Github', log: true}
+        {name: 'Facebook', description: 'Feestboek', url: 'https://facebook.com', type: 'external', icon: 'Facebook', log: true, hidden: false, keywords: ['facebook', 'face', 'feestboek', 'fb']},
+        {name: 'Messenger', description: 'Chatding', url: 'https://messenger.com', type: 'external', icon: 'Messenger', log: true, hidden: false, keywords: ['messenger']},
+        {name: 'YouTube', description: 'Filmpjes', url: 'https://youtube.com', type: 'external', icon: 'Youtube', log: true, hidden: false, keywords: ['youtube', 'yt']},
+        {name: 'Drive', description: 'Cloud files', url: 'https://drive.google.com', type: 'external', icon: 'Drive', log: true, hidden: false, keywords: ['drive', 'google drive']},
+        {name: 'Mail', description: 'Cloud brieven', url: 'https://mail.google.com', type: 'external', icon: 'Mail', log: true, hidden: false, keywords: ['mail', 'gmail']},
+        {name: 'Netflix', description: 'Series', url: 'https://netflix.com', type: 'external', icon: 'Netflix', log: true, hidden: false, keywords: ['netflix']},
+        {name: 'Disney+', description: 'Series', url: 'https://disneyplus.com', type: 'external', icon: 'Disney_Plus', log: true, hidden: false, keywords: ['disneyplus', 'disney plus', 'disney+', 'disney +', 'disney']},
+        {name: 'GitHub', description: 'Dev', url: 'https://github.com', type: 'external', icon: 'Github', log: true, hidden: true, hidden: false, keywords: ['github', 'git']},
+        {name: 'Outlook', description: 'Cloud brieven 2', url: 'https://outlook.live.com/mail/0/', type: 'external', icon: 'Mail', log: true, hidden: true, keywords: ['outlook', 'live']}
       ],
       searchengines: [
         {name: 'Google', description: 'Overlord', method: 'GET', link: 'https://www.google.com/search?q={searchquery}', icon: 'Google', log: true, keywords: ['google']},
