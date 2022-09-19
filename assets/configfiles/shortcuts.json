@@ -100,7 +100,6 @@
         "type": "external",
         "icon": "Github",
         "log": true,
-        "hidden": true,
         "hidden": false,
         "keywords": [
             "github",

@@ -68,5 +68,17 @@
             "bol.com",
             "bol"
         ]
+    },
+    {
+        "name": "Vertalen",
+        "description": "Vertalen",
+        "method": "GET",
+        "link": "https://translate.google.com/?hl=nl&sl=auto&tl=nl&text={searchquery}&op=translate",
+        "icon": "Vertalen",
+        "log": true,
+        "keywords": [
+            "vertalen",
+            "translate"
+        ]
     }
 ]
