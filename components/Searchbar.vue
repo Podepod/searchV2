@@ -47,9 +47,17 @@
             },
 
             handleSmartSearch() {
+                // als het een URL is, ga naar de URL
                 if (/^(https?:\/\/)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6})\S*$/gm.test(this.form.search)) {
                     this.doRedirect(/^https?:\/\//gm.test(this.form.search) ? this.form.search : `http://${this.form.search}`);
-                } else if (this.smartSearch && /^#/gm.test(this.form.search)) {
+                // als het een localhost link is, ga naar localhost
+                } else if (/^(localhost):?(\d{1,4}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])?$/gm.test(this.form.search)) {
+                    this.doRedirect("http://" + this.form.search)
+                // als het ip is, ga naar het ip
+                } else if (/^(?:(?:25[0-5]|2[0-4]\d|1?\d?\d)(?:(\.|:)(?!$)|$)){4}(\d{1,4}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])?$/gm.test(this.form.search)) {
+                    this.doRedirect("http://" + this.form.search);
+                // als het een shortcut is, ga naar de shortcut url
+                } else if (/^#/gm.test(this.form.search)) {
                     for (var i = 0; i < this.shortcuts.length; i++) {
                         if (this.shortcuts[i].keywords) {
                             for (var j = 0; j < this.shortcuts[i].keywords.length; j++) {
@@ -62,6 +70,8 @@
                         }
                     }
                     this.resetShortcutSearch();
+                
+                // Als geen van bovenstaande, ga naar searchengine
                 } else if (this.searchEngines[this.usedSearchEngine].method.toLowerCase() == "get") {
                     // [TODO] log
                     this.doRedirect();

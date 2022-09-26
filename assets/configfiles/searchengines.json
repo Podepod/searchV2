@@ -80,5 +80,17 @@
             "vertalen",
             "translate"
         ]
+    },
+    {
+        "name": "Facebook",
+        "description": "Feestboek",
+        "method": "GET",
+        "link": "https://www.facebook.com/search/top/?q={searchquery}",
+        "icon": "Facebook",
+        "log": true,
+        "keywords": [
+            "facebook",
+            "fb"
+        ]
     }
 ]

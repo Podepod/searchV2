@@ -118,5 +118,42 @@
             "outlook",
             "live"
         ]
+    },
+    {
+        "name": "Uurrooster",
+        "description": "TM uurrooster",
+        "url": "https://rooster.thomasmore.be",
+        "type": "external",
+        "icon": "Calendar",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "rooster"
+        ]
+    },
+    {
+        "name": "Calendar",
+        "description": "Google Calendar",
+        "url": "https://calendar.google.com",
+        "type": "external",
+        "icon": "Calendar",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "calendar",
+            "agenda"
+        ]
+    },
+    {
+        "name": "Streamz",
+        "description": "Streamz",
+        "url": "https://www.streamz.be/",
+        "type": "external",
+        "icon": "Streamz",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "streamz"
+        ]
     }
 ]
