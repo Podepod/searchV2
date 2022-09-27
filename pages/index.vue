@@ -10,7 +10,7 @@
       <Shortcut v-for="i in shortcuts" v-bind:key="i.name" v-if="!i.hidden" :name="i.name" :description="i.description" :url="i.url" :type="i.type" :icon="i.icon" :log="i.log" />
     </div>
 
-    <p class="version">V2.05</p>
+    <p class="version">V2.06</p>
 
   </div>
 </template>

@@ -92,5 +92,17 @@
             "facebook",
             "fb"
         ]
+    },
+    {
+        "name": "IMDb",
+        "description": "Internet Movie Database",
+        "method": "GET",
+        "link": "https://www.imdb.com/find?q={searchquery}",
+        "icon": "IMDb",
+        "log": true,
+        "keywords": [
+            "imdb",
+            "movie"
+        ]
     }
 ]
