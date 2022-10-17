@@ -104,5 +104,19 @@
             "imdb",
             "movie"
         ]
+    },
+    {
+        "name": "Maps Route",
+        "description": "Route from one to another place",
+        "method": "GET",
+        "link": "https://www.google.com/maps/dir/{searchquery}/{searchquery}",
+        "icon": "Maps",
+        "log": true,
+        "keywords": [
+            "route",
+            "go"
+        ],
+        "split_query": true,
+        "nbr_of_query_args": 2
     }
 ]

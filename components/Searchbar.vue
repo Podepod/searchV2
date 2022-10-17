@@ -83,7 +83,23 @@
             },
 
             doRedirect(url) {
-                if (!url) { url = this.searchEngines[this.usedSearchEngine].link.replace(/(.+)(\{searchquery\})(.*)/gmi, `$1${this.form.search}$3`) }
+                if (!url) { 
+                    if (this.searchEngines[this.usedSearchEngine].split_query) {
+                        // split query on '|'
+                        let q = this.form.search.split(/ ?\| ?/i);
+
+                        // replace ' ' with '+'
+                        for (let arg in q) { q[arg] = q[arg].replace(/[ ,]+/g, '+'); }
+
+                        // generate url
+                        url = this.searchEngines[this.usedSearchEngine].link;
+                        q.forEach((arg) => {
+                            url = url.replace(/\{searchquery\}/i, arg);
+                        })
+                    } else {
+                        url = this.searchEngines[this.usedSearchEngine].link.replace(/(.+)(\{searchquery\})(.*)/gmi, `$1${this.form.search}$3`);
+                    }
+                }
                 window.location.href = url;
             },
 
