@@ -141,7 +141,9 @@
         "hidden": true,
         "keywords": [
             "calendar",
-            "agenda"
+            "agenda",
+            "cal",
+            "calender"
         ]
     },
     {
@@ -155,5 +157,39 @@
         "keywords": [
             "streamz"
         ]
+    },
+    {
+        "name": "VRT NWS",
+        "description": "Nieuws",
+        "url": "",
+        "type": "external",
+        "icon": "",
+        "log": true,
+        "hidden": false,
+        "keywords": [
+            "vrtnws",
+            "nws",
+            "news",
+            "nieuws"
+        ]
+    },
+    {
+        "name": "Buienradar",
+        "description": "Weer",
+        "url": "",
+        "type": "external",
+        "icon": "",
+        "log": true,
+        "hidden": false,
+        "keywords": [
+            "buienradar",
+            "buien",
+            "buienr",
+            "weer",
+            "weather"
+        ]
+    },
+    {
+        "name": "github gist"
     }
 ]

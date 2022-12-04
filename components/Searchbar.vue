@@ -149,7 +149,6 @@
             },
 
             keyboardResetSearchEngine(e) {
-                console.log(e)
                 if (this.smartSearch && this.usingNonDefaultEngine && this.form.search == '' && e.key=='Delete') {
                     this.resetSearchEngine();
                 }

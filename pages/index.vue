@@ -23,14 +23,7 @@ import searchengineData from "~/assets/configfiles/searchengines.json"
 
 export default {
   name: 'IndexPage',
-  mounted() {
-    this.getData();
-  },
-  methods: {
-    getData() {
-      console.log("Geef mij data!");
-    }
-  },
+
   data () {
     return {
       // [TODO] get data from file of database --> pak misschien maar gwn file voor dit
