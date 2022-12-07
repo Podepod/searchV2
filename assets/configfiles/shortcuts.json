@@ -159,7 +159,7 @@
         ]
     },
     {
-        "name": "VRT NWS",
+        "name": "VRTnws",
         "description": "Nieuws",
         "url": "https://www.vrt.be/vrtnws/nl/",
         "type": "external",
@@ -174,7 +174,7 @@
         ]
     },
     {
-        "name": "Buienradar",
+        "name": "Weather",
         "description": "Weer",
         "url": "https://www.buienradar.be/",
         "type": "external",
@@ -196,7 +196,7 @@
         "type": "external",
         "icon": "Github",
         "log": true,
-        "hidden": false,
+        "hidden": true,
         "keywords": [
             "gist",
             "gists"
