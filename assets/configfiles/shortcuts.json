@@ -161,7 +161,7 @@
     {
         "name": "VRT NWS",
         "description": "Nieuws",
-        "url": "",
+        "url": "https://www.vrt.be/vrtnws/nl/",
         "type": "external",
         "icon": "",
         "log": true,
@@ -176,7 +176,7 @@
     {
         "name": "Buienradar",
         "description": "Weer",
-        "url": "",
+        "url": "https://www.buienradar.be/",
         "type": "external",
         "icon": "",
         "log": true,
@@ -190,6 +190,16 @@
         ]
     },
     {
-        "name": "github gist"
+        "name": "Github Gist",
+        "description": "Smoll bits of code",
+        "url": "https://gist.github.com/",
+        "type": "external",
+        "icon": "Github",
+        "log": true,
+        "hidden": false,
+        "keywords": [
+            "gist",
+            "gists"
+        ]
     }
 ]
