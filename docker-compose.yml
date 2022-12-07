@@ -3,6 +3,8 @@ services:
   web:
     image: podepod/nuxtjs-server
     build: .
+    volumes:
+      - "./assets/configfiles:/app/assets/configfiles"
     ports:
       - "3000:3000"
     restart: unless-stopped
