@@ -19,7 +19,7 @@
 import searchbarData from "~/assets/configfiles/searchbars.json";
 import shortcutData from "~/assets/configfiles/shortcuts.json";
 import searchengineData from "~/assets/configfiles/searchengines.json";
-import facesData from "~.assets/configfiles/faces.json";
+import facesData from "~/assets/configfiles/faces.json";
 // [TODO] hover component --> description 
 
 export default {
@@ -37,8 +37,8 @@ export default {
     },
 
     getFace() {
-      for (let i = 0; i < this.facesData.length; i++) {
-        if (this.isToday(this.facesData[i].date)) {
+      for (let i = 0; i < this.faces.length; i++) {
+        if (this.isToday(this.faces[i].date)) {
           return this.faceData[i].face;
         }
       }
@@ -53,6 +53,7 @@ export default {
       searchbars: searchbarData,
       shortcuts: shortcutData,
       searchengines: searchengineData,
+      faces: facesData,
       defaultSearchEngine: 0,
       face: this.getFace()
     }
