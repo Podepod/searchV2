@@ -1,6 +1,6 @@
 <template>
   <div class="center">
-    <h1 id="title" class="title">._.</h1>
+    <h1 id="title" class="title">:r</h1>
 
     <div class="searchbars center">
       <Searchbar v-for="i in searchbars" v-bind:key="i.name" :description="i.description" :searchEngine="defaultSearchEngine" :placeholder="i.placeholder" :isDefault="i.isDefault" :log="i.log" :smartSearch="i.smartSearch" :searchEngines="searchengines" :shortcuts="shortcuts" />
