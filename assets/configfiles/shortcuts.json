@@ -201,5 +201,17 @@
             "gist",
             "gists"
         ]
+    },
+    {
+        "name": "Trello",
+        "description": "Smoll bits of code",
+        "url": "https://trello.com",
+        "type": "external",
+        "icon": "Github",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "trello"
+        ]
     }
 ]
