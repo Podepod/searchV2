@@ -18,11 +18,34 @@
 <script>
 import searchbarData from "~/assets/configfiles/searchbars.json";
 import shortcutData from "~/assets/configfiles/shortcuts.json";
-import searchengineData from "~/assets/configfiles/searchengines.json"
+import searchengineData from "~/assets/configfiles/searchengines.json";
+import facesData from "~.assets/configfiles/faces.json";
 // [TODO] hover component --> description 
 
 export default {
   name: 'IndexPage',
+
+  methods: {
+    isToday(date) {
+      const today = new Date();
+      const dateobj = new Date(today.getFullYear() + "-" + date);
+
+      console.log(today.toDateString());
+      console.log(dateobj.toDateString());
+
+      return (today.toDateString() === dateobj.toDateString() ? true : false)
+    },
+
+    getFace() {
+      for (let i = 0; i < this.facesData.length; i++) {
+        if (this.isToday(this.facesData[i].date)) {
+          return this.faceData[i].face;
+        }
+      }
+
+      return "._.";
+    }
+  },
 
   data () {
     return {
@@ -30,7 +53,8 @@ export default {
       searchbars: searchbarData,
       shortcuts: shortcutData,
       searchengines: searchengineData,
-      defaultSearchEngine: 0
+      defaultSearchEngine: 0,
+      face: this.getFace()
     }
   }
 }
