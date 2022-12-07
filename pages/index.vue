@@ -37,8 +37,8 @@ export default {
     },
 
     getFace() {
-      for (let i = 0; i < faces.length; i++) {
-        if (this.isToday(faces[i].date)) {
+      for (let i = 0; i < facesData.length; i++) {
+        if (this.isToday(facesData[i].date)) {
           return this.faceData[i].face;
         }
       }
@@ -53,7 +53,6 @@ export default {
       searchbars: searchbarData,
       shortcuts: shortcutData,
       searchengines: searchengineData,
-      faces: facesData,
       defaultSearchEngine: 0,
       face: this.getFace()
     }
