@@ -204,10 +204,10 @@
     },
     {
         "name": "Trello",
-        "description": "Smoll bits of code",
+        "description": "Todo's enzo",
         "url": "https://trello.com",
         "type": "external",
-        "icon": "Github",
+        "icon": "Trello",
         "log": true,
         "hidden": true,
         "keywords": [
