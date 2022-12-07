@@ -192,7 +192,7 @@
     {
         "name": "Github Gist",
         "description": "Smoll bits of code",
-        "url": "https://github.com/",
+        "url": "https://gist.github.com/",
         "type": "external",
         "icon": "Github",
         "log": true,
