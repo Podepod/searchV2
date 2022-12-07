@@ -37,8 +37,8 @@ export default {
     },
 
     getFace() {
-      for (let i = 0; i < this.faces.length; i++) {
-        if (this.isToday(this.faces[i].date)) {
+      for (let i = 0; i < faces.length; i++) {
+        if (this.isToday(faces[i].date)) {
           return this.faceData[i].face;
         }
       }
