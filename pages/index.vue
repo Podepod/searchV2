@@ -39,6 +39,7 @@ export default {
     getFace() {
       for (let i = 0; i < facesData.length; i++) {
         if (this.isToday(facesData[i].date)) {
+          console.log(facesData[i].face);
           return facesData[i].face;
         }
       }
