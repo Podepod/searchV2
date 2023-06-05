@@ -2,17 +2,9 @@
     {
         "name": "Smart search", 
         "description": "Useful stuff for me", 
-        "placeholder": "Smart Search", 
+        "placeholder": "Search", 
         "isDefault": true, 
         "log": true, 
         "smartSearch": true
-    },
-    {
-        "name": "Stupid search", 
-        "description": "Less useful stuff for me", 
-        "placeholder": "Stupid Search", 
-        "isDefault": false, 
-        "log": true, 
-        "smartSearch": false
     }
 ]

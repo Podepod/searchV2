@@ -1,0 +1,88 @@
+:root {
+    //light theme
+    --text-color:                rgb(227, 227, 227);  
+    --text-color-focus:          rgb(200, 200, 200);
+    --background-color:          rgb(255,255,255);
+    --title-color:               rgb(0,0,0);
+    --title-hover:               rgb(200, 200, 200);
+
+    --filter-text-color:                invert(99%) sepia(1%) saturate(932%) hue-rotate(191deg) brightness(113%) contrast(78%); 
+    --filter-text-color-focus:          invert(84%) sepia(20%) saturate(21%) hue-rotate(94deg) brightness(96%) contrast(86%);   
+    --filter-background-color:          invert(99%) sepia(1%) saturate(331%) hue-rotate(60deg) brightness(115%) contrast(100%);
+    --filter-title-color:               invert(0%) sepia(0%) saturate(7500%) hue-rotate(217deg) brightness(110%) contrast(94%);
+    
+  
+    // dark theme  
+    &.dark-mode {
+        --text-color:                rgb(150, 150, 150);  
+        --text-color-focus:          rgb(227, 227, 227);    
+        --background-color:          rgb(42, 42, 42);
+        --title-color:               rgb(255,255,255);
+        --title-hover:               rgb(150, 150, 150); 
+
+        --filter-text-color:                invert(65%) sepia(4%) saturate(4%) hue-rotate(341deg) brightness(92%) contrast(89%);
+        --filter-text-color-focus:          invert(99%) sepia(1%) saturate(932%) hue-rotate(191deg) brightness(113%) contrast(78%);    
+        --filter-background-color:          invert(8%) sepia(2%) saturate(6%) hue-rotate(359deg) brightness(94%) contrast(79%);
+        --filter-title-color:               invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    }
+
+    &.night-blue-mode {
+        --text-color:                rgb(48, 163, 244);  
+        --text-color-focus:          rgb(180, 221, 250);    
+        --background-color:          rgb(0, 36, 81);
+        --title-color:               rgb(209, 241, 169);
+        --title-hover:               rgb(139, 162, 112);
+
+        --filter-text-color:                invert(50%) sepia(86%) saturate(1136%) hue-rotate(179deg) brightness(98%) contrast(95%);
+        --filter-text-color-focus:          invert(99%) sepia(25%) saturate(4721%) hue-rotate(171deg) brightness(100%) contrast(97%);   
+        --filter-background-color:          invert(12%) sepia(24%) saturate(5554%) hue-rotate(197deg) brightness(96%) contrast(104%);
+        --filter-title-color:               invert(100%) sepia(5%) saturate(7393%) hue-rotate(318deg) brightness(91%) contrast(111%);
+    }
+
+    &.light-high-contrast-mode {
+        --text-color:                black;  
+        --text-color-focus:          black;    
+        --background-color:          white;
+        --title-color:               black;
+        --title-hover:               black;
+
+        --filter-text-color:                invert(0%) sepia(0%) saturate(7500%) hue-rotate(217deg) brightness(110%) contrast(94%);
+        --filter-text-color-focus:          invert(0%) sepia(0%) saturate(7500%) hue-rotate(217deg) brightness(110%) contrast(94%);
+        --filter-background-color:          invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+        --filter-title-color:               invert(0%) sepia(0%) saturate(7500%) hue-rotate(217deg) brightness(110%) contrast(94%);
+    }
+
+    &.dark-high-contrast-mode {
+        --text-color:                white;  
+        --text-color-focus:          white;    
+        --background-color:          black;
+        --title-color:               white;
+        --title-hover:               white;
+
+        --filter-text-color:                invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+        --filter-text-color-focus:          invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+        --filter-background-color:          invert(0%) sepia(0%) saturate(7500%) hue-rotate(217deg) brightness(110%) contrast(94%);
+        --filter-title-color:               invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    }
+
+    &.podepod-mode {
+        --text-color:                  rgb(255, 255, 255);
+        --text-color-focus:             rgb(249, 199, 132);
+        --background-color:             rgb(78, 89, 140);
+        --title-color:                  rgb(252, 175, 88);
+        --title-hover:                  rgb(255, 140, 66);               
+    }
+}
+
+
+$color:         var(--text-color);
+$color-focus:   var(--text-color-focus);
+$bg-color:      var(--background-color);
+$title-color:   var(--title-color);
+$title-hover:   var(--title-hover);
+
+$filter-color:         var(--filter-text-color);
+$filter-color-focus:   var(--filter-text-color-focus);
+$filter-bg-color:      var(--filter-background-color);
+$filter-title-color:   var(--filter-title-color);
+//https://dev.to/hostman_com/dark-mode-how-to-create-your-first-nuxt-js-app-part-2-35ni

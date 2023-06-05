@@ -1,69 +1,24 @@
-# searchV2
+# SearchV2
 
-## Build Setup
+## Features
 
-```bash
-# install dependencies
-$ npm install
+## TODO's
+- [ ] redo all icons change base color to black → use css filters to change color
+- [ ] make it calculate if there is a calculation in the smart search
+  - [ ] regex to detect math expressions
+  - [ ] a way to calculate the output
+  - [ ] a way to display the output (should be able to copy answer) → temp isn't good → redo!!!
+    ```regex
+    ^[0-9()+\-*.\/]*$
+    ^([-+]? ?(\d+(\.\d{0,4})?|\(\g<1>\))( ?[-+*\/] ?\g<1>)?)$
+    ```
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
-
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+- [ ] make a dark mode switch & a podepod theme
+  - [ ] maak icons nieuwe kleuren → gewoon alle icons zwart maken en filters gebruiken!
+  - [x] maak 2 knopjes, system / no system & light / dark (als system aan staat, wordt de light / dark mode knop disabled) 
+  - [x] maak thema's (light, dark, night-blue)
+    --> kan ook select input zijn?
+- [ ] add more search engines, shortcuts
+- [ ] use a database for shortcuts, search engines, icons, faces, ...
+- [ ] remove dumb search bar? → room for more shortcuts? → yes please! → searchbars don't need config file anymore
+- [ ] make version number kind of interactive (hover over for more info or something?)

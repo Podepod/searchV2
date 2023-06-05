@@ -128,7 +128,8 @@
         "log": true,
         "hidden": true,
         "keywords": [
-            "rooster"
+            "rooster",
+            "uurrooster"
         ]
     },
     {
@@ -212,6 +213,100 @@
         "hidden": true,
         "keywords": [
             "trello"
+        ]
+    },
+    {
+        "name": "devhints.io",
+        "description": "cheatsheet",
+        "url": "https://devhints.io/",
+        "type": "external",
+        "icon": "Devhints",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "devhints",
+            "cheatsheets",
+            "cheatsheet"
+        ]
+    },
+    {
+        "name": "ChiroHolsbeekDorp",
+        "description": "chiro website",
+        "url": "https://chiroholsbeekdorp.be",
+        "type": "external",
+        "icon": "Chiro",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "chiro",
+            "chirohd",
+            "chd",
+            "chiroholsbeekdorp",
+            "chiro hd",
+            "chiro holsbeekdorp",
+            "chiro holsbeek dorp",
+            "chiro holsbeek-dorp"
+        ]
+    },
+    {
+        "name": "twitter",
+        "description": "Hellhole",
+        "url": "https://twitter.com",
+        "type": "external",
+        "icon": "Twitter",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "twitter",
+            "tweet",
+            "tw",
+            "twit"
+        ]
+    },
+    {
+        "name": "lodegilis.be",
+        "description": "personal website",
+        "url": "https://lodegilis.be",
+        "type": "external",
+        "icon": "Lodegilis",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "lodegilis",
+            "lode gilis",
+            "lodeg",
+            "lode g",
+            "lode",
+            "contact",
+            "about",
+            "home"
+        ]
+    },
+    {
+        "name": "NMBS",
+        "description": "belgian train",
+        "url": "https://www.belgiantrain.be/nl",
+        "type": "external",
+        "icon": "NMBS",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "nmbs",
+            "train"
+        ]
+    },
+    {
+        "name": "RegEx101",
+        "description": "RegEx tester / designer",
+        "url": "https://regex101.com/",
+        "type": "external",
+        "icon": "Regex",
+        "log": true,
+        "hidden": true,
+        "keywords": [
+            "regex101",
+            "regex",
+            "reg"
         ]
     }
 ]

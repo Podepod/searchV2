@@ -1,0 +1,44 @@
+[
+    {
+        "displayName": "System",
+        "name": "system",
+        "icon": "",
+        "active": false
+    },
+    {
+        "displayName": "Dark",
+        "name": "dark",
+        "icon": "",
+        "active": false
+    },
+    {
+        "displayName": "Light",
+        "name": "light",
+        "icon": "",
+        "active": false
+    },
+    {
+        "displayName": "Night Blue",
+        "name": "night-blue",
+        "icon": "",
+        "active": false
+    },
+    {
+        "displayName": "Dark (High Contrast)",
+        "name": "dark-high-contrast",
+        "icon": "",
+        "active": false
+    },
+    {
+        "displayName": "Light (High Contrast)",
+        "name": "light-high-contrast",
+        "icon": "",
+        "active": false
+    },
+    {
+        "displayName": "Podepod",
+        "name": "podepod",
+        "icon": "",
+        "active": false
+    }
+]

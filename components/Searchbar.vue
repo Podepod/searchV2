@@ -6,7 +6,21 @@
         <button v-if="this.searching_shortcut" class="searchbarPrefix" @click="buttonResetSearchShortcut()">
             <img src="/images/other_icons_svg/shortcut_default.svg" alt="" />
         </button>
-        <input v-model="form.search" ref="search" @focus="handleFocus()" @blur="handleBlur()" @input="handleInput()" @keydown.delete="keyboardResetSearchEngine($event)" :class="(this.usingNonDefaultEngine || this.searching_shortcut) ? 'searchbar withPrefix' : 'searchbar'" type="search" :name="this.searchEngines[this.usedSearchEngine].queryname" :placeholder="tempPlaceholder" autocomplete="off">
+        <input 
+            v-model="form.search" 
+            ref="search" 
+            @focus="handleFocus()" 
+            @blur="handleBlur()" 
+            @input="handleInput()" 
+            @keydown.delete="keyboardResetSearchEngine($event)" 
+            :class="'searchbar' + ((this.usingNonDefaultEngine || this.searching_shortcut) ? ' withPrefix' : '') + (this.isCalculation ? ' withSufix' : '')" 
+            type="search" 
+            :name="this.searchEngines[this.usedSearchEngine].queryname" 
+            :placeholder="tempPlaceholder" autocomplete="off"
+        >
+        <button v-if="this.isCalculation" class="searchbarSufix" @click="buttonResetCalculation()">
+            {{ calculationResult }}
+        </button>
     </form>
 </template>
 
@@ -32,7 +46,6 @@
             handleSearch() { 
                 if (this.form.search == '') { return; }
 
-                // [TODO] als search query == link of shortcut naam --> ga naar link of shortcut url in plaats van search query uit te voeren
                 if (this.smartSearch){
                     this.handleSmartSearch();               
                 } else if (this.searchEngines[this.usedSearchEngine].method.toLowerCase() == "get") {
@@ -130,10 +143,18 @@
                             }
                         }
                     }
+                } else if (this.smartSearch && /^(\(?\s*?[0-9.])*(\s*?[\+-\/*]\s*?\(?\s*?[0-9.]+\s*?\)?)+$/gm.test(this.form.search)) { 
+                    this.isCalculation = true;
+                    try {
+                        this.calculate();
+                    } catch {
+                        this.isCalculation = false;
+                    }
                 } else if (this.smartSearch && /^#/gm.test(this.form.search)) {
                     this.searching_shortcut = true;
-                } else if (this.smartSearch && !/^#/gm.test(this.form.search)) {
+                } else {
                     this.searching_shortcut = false;
+                    this.isCalculation = false;
                 }
             },
 
@@ -163,6 +184,16 @@
                 if (this.smartSearch && !this.searchbarFocussed) {
                     this.resetSearchEngine()
                 } 
+            },
+
+            calculate() {
+                // calculate data from this.form.search
+                this.calculationResult = eval(this.form.search); // ongeveer zo als dit
+            },
+
+            buttonResetCalculation() {
+                this.isCalculation = false;
+                this.form.search = "";
             }
         },
         data() {
@@ -171,6 +202,8 @@
                 usedSearchEngine: this.searchEngine,
                 usingNonDefaultEngine: false,
                 searching_shortcut: false,
+                isCalculation: false,
+                calculationResult: 10,
                 form: {
                     search: ""
                 },

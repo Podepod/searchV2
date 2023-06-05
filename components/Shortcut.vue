@@ -19,6 +19,7 @@
         ],
         methods: {
             clicked() {
+                // [TODO] check of da control wordt ingedrukt
                 if (this.type == 'external'){
                     // [TODO] log
                     window.location.href = this.url;

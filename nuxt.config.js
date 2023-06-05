@@ -34,14 +34,33 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/color-mode',
+    '@nuxtjs/fontawesome'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  colorMode: {
+    preference: 'system', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    //hid: 'nuxt-color-mode-script',
+    //globalName: '__NUXT_COLOR_MODE__',
+    //componentName: 'ColorScheme',
+    classPrefix: '',
+    //classSuffix: '-mode',
+    storageKey: 'nuxt-color-mode'
+  },
+
+  fontawesome: {
+    icons:{
+     solid:true,
+     brands:true
+    }
   }
 }

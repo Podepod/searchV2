@@ -10,8 +10,11 @@
       <Shortcut v-for="i in shortcuts" v-bind:key="i.name" v-if="!i.hidden" :name="i.name" :description="i.description" :url="i.url" :type="i.type" :icon="i.icon" :log="i.log" />
     </div>
 
-    <p class="version">V2.06</p>
+    <div class="misc-buttons">
+      <ColorThemeSelector />    
 
+      <p class="version">V2.08</p>
+    </div>
   </div>
 </template>
 
@@ -29,17 +32,12 @@ export default {
     isToday(date) {
       const today = new Date();
       const dateobj = new Date(today.getFullYear() + "-" + date);
-
-      console.log(today.toDateString());
-      console.log(dateobj.toDateString());
-
       return (today.toDateString() === dateobj.toDateString() ? true : false)
     },
 
     getFace() {
       for (let i = 0; i < facesData.length; i++) {
         if (this.isToday(facesData[i].date)) {
-          console.log(facesData[i].face);
           return facesData[i].face;
         }
       }
