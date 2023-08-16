@@ -22,3 +22,4 @@
 - [ ] use a database for shortcuts, search engines, icons, faces, ...
 - [ ] remove dumb search bar? → room for more shortcuts? → yes please! → searchbars don't need config file anymore
 - [ ] make version number kind of interactive (hover over for more info or something?)
+- [ ] add link to cloud.lodegilis.be
